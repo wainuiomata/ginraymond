@@ -73,7 +73,7 @@ func (r RaymondRender) Render(w http.ResponseWriter) error {
 	return err
 }
 
-// WriteContentType writes header information about content ginraymond outputts.
+// WriteContentType writes header information about content RaymondRender outputts.
 // This will now implement gin's render.Render interface.
 func (r RaymondRender) WriteContentType(w http.ResponseWriter) {
 	header := w.Header()
