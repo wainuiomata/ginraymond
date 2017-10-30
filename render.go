@@ -22,9 +22,6 @@ type RaymondRender struct {
 	Context  interface{}
 }
 
-// htmlContentType defines the content outputted by this renderer.
-var htmlContentType = []string{"text/html; charset=utf-8"}
-
 // New creates a new RaymondRender instance with custom Options.
 func New(options *RenderOptions) *RaymondRender {
 	return &RaymondRender{
@@ -60,14 +57,9 @@ func (r RaymondRender) Instance(name string, data interface{}) render.Render {
 	}
 }
 
-// Render should render the template to the response.
+// Render should write the content type, then render the template to the response.
 func (r RaymondRender) Render(w http.ResponseWriter) error {
-	// Unless already set, write the Content-Type header.
-	header := w.Header()
-	if val := header["Content-Type"]; len(val) == 0 {
-		header["Content-Type"] = []string{r.Options.ContentType}
-	}
-
+	r.WriteContentType(w)
 	output, err := r.Template.Exec(r.Context)
 	w.Write([]byte(output))
 	return err
@@ -78,6 +70,6 @@ func (r RaymondRender) Render(w http.ResponseWriter) error {
 func (r RaymondRender) WriteContentType(w http.ResponseWriter) {
 	header := w.Header()
 	if val := header["Content-Type"]; len(val) == 0 {
-		header["Content-Type"] = htmlContentType
+		header["Content-Type"] = r.Options.ContentType
 	}
 }
