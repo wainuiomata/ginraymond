@@ -22,6 +22,9 @@ type RaymondRender struct {
 	Context  interface{}
 }
 
+// htmlContentType defines the content outputted by this renderer.
+var htmlContentType = []string{"text/html; charset=utf-8"}
+
 // New creates a new RaymondRender instance with custom Options.
 func New(options *RenderOptions) *RaymondRender {
 	return &RaymondRender{
@@ -68,4 +71,13 @@ func (r RaymondRender) Render(w http.ResponseWriter) error {
 	output, err := r.Template.Exec(r.Context)
 	w.Write([]byte(output))
 	return err
+}
+
+// WriteContentType writes header information about content ginraymond outputts.
+// This will now implement gin's render.Render interface.
+func (r RaymondRender) WriteContentType(w http.ResponseWriter) {
+	header := w.Header()
+	if val := header["Content-Type"]; len(val) == 0 {
+		header["Content-Type"] = htmlContentType
+	}
 }
