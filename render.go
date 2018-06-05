@@ -57,15 +57,19 @@ func (r RaymondRender) Instance(name string, data interface{}) render.Render {
 	}
 }
 
-// Render should render the template to the response.
+// Render should write the content type, then render the template to the response.
 func (r RaymondRender) Render(w http.ResponseWriter) error {
-	// Unless already set, write the Content-Type header.
-	header := w.Header()
-	if val := header["Content-Type"]; len(val) == 0 {
-		header["Content-Type"] = []string{r.Options.ContentType}
-	}
-
+	r.WriteContentType(w)
 	output, err := r.Template.Exec(r.Context)
 	w.Write([]byte(output))
 	return err
+}
+
+// WriteContentType writes header information about content RaymondRender outputs.
+// This will now implement gin's render.Render interface.
+func (r RaymondRender) WriteContentType(w http.ResponseWriter) {
+	header := w.Header()
+	if val := header["Content-Type"]; len(val) == 0 {
+		header["Content-Type"] = r.Options.ContentType
+	}
 }
