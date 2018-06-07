@@ -26,7 +26,10 @@ type RaymondRender struct {
 func New(options *RenderOptions) *RaymondRender {
 	return &RaymondRender{
 		Options: options,
-		Cache:   &TemplateCache{TemplateDir: options.TemplateDir},
+		Cache: &TemplateCache{
+			TemplateDir: options.TemplateDir,
+			cache:       make(map[string]*raymond.Template),
+		},
 	}
 }
 

@@ -44,7 +44,7 @@ func (c *TemplateCache) Get(filename string) (*raymond.Template, error) {
 	// Otherwise load template from disk, put it in the cache and return it,
 	// but only put it in the cache if there were no errors from LoadTemplate.
 	tpl, err := LoadTemplate(filename)
-	if err != nil {
+	if err == nil {
 		lock.Lock()
 		c.cache[filename] = tpl
 		lock.Unlock()
