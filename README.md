@@ -8,7 +8,7 @@ template library for this: https://github.com/aymerick/raymond, which
 implements Handlebars style templates in pure Go.
 
 This simple binding library is based on a similar library I built for using
-Pongo2 templates with Gin: https://github.com/robvdl/pongo2gin.
+Pongo2 templates with Gin: https://gitlab.com/go-box/pongo2gin.
 
 Usage
 -----
@@ -34,7 +34,7 @@ package main
 
 import (
     "github.com/gin-gonic/gin"
-    "github.com/robvdl/ginraymond"
+    "gitlab.com/go-box/ginraymond"
 )
 
 func main() {
@@ -62,7 +62,7 @@ package main
 import (
     "github.com/gin-gonic/gin"
     "github.com/aymerick/raymond"
-    "github.com/robvdl/ginraymond"
+    "gitlab.com/go-box/ginraymond"
 )
 
 // See Raymond docs on how to implement handlebars helpers.
@@ -113,4 +113,4 @@ Raymond does not implement it's own cache, so one is implemented in ginraymond.
 GoDoc
 -----
 
-https://godoc.org/github.com/robvdl/ginraymond
+https://godoc.org/gitlab.com/go-box/ginraymond
