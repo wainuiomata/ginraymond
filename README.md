@@ -7,7 +7,7 @@ for Handlebars style templates to your Gin application. It uses the Raymond
 template library for this: https://github.com/aymerick/raymond, which
 implements Handlebars style templates in pure Go.
 
-This simple binding library is based on a similar library I built for using
+This simple binding library is based on a similar library built for using
 Pongo2 templates with Gin: https://gitlab.com/go-box/pongo2gin.
 
 Usage
