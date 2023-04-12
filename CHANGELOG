@@ -26,6 +26,8 @@ Thanks to all contributors.
 
 Thanks to all contributors.
 
+## v1.0.1
+
 - Fix bug in cache code: thanks to octa
 - RaymondRender now implements gin's render.Render interface: thanks to Benayak Karki
 
