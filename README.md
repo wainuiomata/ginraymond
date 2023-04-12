@@ -113,4 +113,4 @@ Raymond does not implement its own cache, so one is implemented in ginraymond.
 GoDoc
 -----
 
-https://godoc.org/gitlab.com/go-box/ginraymond
+https://pkg.go.dev/gitlab.com/go-box/ginraymond
