@@ -1,0 +1,38 @@
+# Changelog
+
+## v1.0.5
+
+- Bump Go version in go.mod to v1.18
+- Upgrade to Gin v1.9.0 to fix CVE GO-2021-0052
+
+Thanks to all contributors.
+
+## v1.0.4
+
+- Fixed a typo in the README.md
+
+Thanks to all contributors.
+
+## v1.0.3
+
+- Add go module support
+- Change git tag format from 1.0.3 to v1.0.3
+
+Thanks to all contributors.
+
+## v1.0.2
+
+- Moved to Gitlab and update docs
+
+Thanks to all contributors.
+
+- Fix bug in cache code: thanks to octa
+- RaymondRender now implements gin's render.Render interface: thanks to Benayak Karki
+
+Thanks to all contributors.
+
+## v1.0.0
+
+- Initial release
+
+Thanks to all contributors.
