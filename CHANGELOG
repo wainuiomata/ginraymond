@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.0.6
+
+- Small release to fix historical short module name
+- Update copyright year
+
+Thanks to all contributors.
+
 ## v1.0.5
 
 - Bump Go version in go.mod to v1.18
