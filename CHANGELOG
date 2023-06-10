@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.7
+
+- Upgrade to Gin 1.9.1 to fix CVE GO-2023-1737
+
 ## v1.0.6
 
 - Small release to fix historical short module name
