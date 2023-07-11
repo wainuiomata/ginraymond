@@ -1,8 +1,16 @@
 # Changelog
 
+## v1.0.8
+
+- Fix error in Render function, w.Write not correctly handled #6
+
+Thanks to all contributors.
+
 ## v1.0.7
 
 - Upgrade to Gin 1.9.1 to fix CVE GO-2023-1737
+
+Thanks to all contributors.
 
 ## v1.0.6
 
