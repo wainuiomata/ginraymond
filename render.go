@@ -46,7 +46,7 @@ func (r RaymondRender) Instance(name string, data interface{}) render.Render {
 	var template *raymond.Template
 	filename := path.Join(r.Options.TemplateDir, name)
 
-	// always read template files from disk if in debug mode, use cache otherwise.
+	// Always read template files from disk if in debug mode, use cache otherwise.
 	if gin.Mode() == "debug" {
 		template = MustLoadTemplate(filename)
 	} else {
@@ -63,8 +63,15 @@ func (r RaymondRender) Instance(name string, data interface{}) render.Render {
 // Render should write the content type, then render the template to the response.
 func (r RaymondRender) Render(w http.ResponseWriter) error {
 	r.WriteContentType(w)
+
+	// Make sure we return the error from Template.Exec if it fails, before calling w.Write
 	output, err := r.Template.Exec(r.Context)
-	w.Write([]byte(output))
+	if err != nil {
+		return err
+	}
+
+	// Don't care about status but return err if Write fails
+	_, err = w.Write([]byte(output))
 	return err
 }
 
