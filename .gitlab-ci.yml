@@ -1,0 +1,30 @@
+image: golang:1.20-alpine
+
+include:
+  - template: Security/SAST.gitlab-ci.yml
+
+stages:
+  - lint
+  - test
+
+golangci-lint:
+  stage: lint
+  image: golangci/golangci-lint:v1.53.3
+  script:
+    - golangci-lint run -v
+
+sast:
+  stage: lint
+
+# Intentionally commented out until we have tests
+#test:current:
+#  stage: test
+#  script:
+#    - CGO_ENABLED=0 go test -coverprofile=coverage-report.out
+#    - go tool cover -html=coverage-report.out -o=coverage-report.html
+#    - go tool cover -func=coverage-report.out
+#  artifacts:
+#    paths:
+#      - coverage-report.html
+#    expire_in: 7 days
+#  coverage: "/\\(statements\\)\\s+\\d+.?\\d+%/"
