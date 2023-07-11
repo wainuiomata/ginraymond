@@ -16,15 +16,14 @@ golangci-lint:
 sast:
   stage: lint
 
-# Intentionally commented out until we have tests
-#test:current:
-#  stage: test
-#  script:
-#    - CGO_ENABLED=0 go test -coverprofile=coverage-report.out
-#    - go tool cover -html=coverage-report.out -o=coverage-report.html
-#    - go tool cover -func=coverage-report.out
-#  artifacts:
-#    paths:
-#      - coverage-report.html
-#    expire_in: 7 days
-#  coverage: "/\\(statements\\)\\s+\\d+.?\\d+%/"
+test:
+  stage: test
+  script:
+    - CGO_ENABLED=0 go test -coverprofile=coverage-report.out
+    - go tool cover -html=coverage-report.out -o=coverage-report.html
+    - go tool cover -func=coverage-report.out
+  artifacts:
+    paths:
+      - coverage-report.html
+    expire_in: 7 days
+  coverage: "/\\(statements\\)\\s+\\d+.?\\d+%/"
