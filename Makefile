@@ -14,4 +14,5 @@ lint :
 .PHONY : test
 test :
 	@go test -coverprofile=coverage.txt -covermode count
+	@go tool cover -func=coverage.txt
 	@go tool cover -html=coverage.txt -o=coverage-report.html
