@@ -1,0 +1,15 @@
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Testing and coverage
+coverage.txt
+coverage.xml
+coverage-report.html
+junit.xml
+
+# Editors and tools
+.idea/
+.vscode/
