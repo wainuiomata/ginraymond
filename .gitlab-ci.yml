@@ -19,13 +19,15 @@ sast:
 
 test:
   stage: test
+  before_script:
+    - go get github.com/boumenot/gocover-cobertura
+    - go install gotest.tools/gotestsum@latest
   script:
     - CGO_ENABLED=0 go test -coverprofile=coverage.txt -covermode count
+  after_script:
     - go tool cover -html=coverage.txt -o=coverage-report.html
     - go tool cover -func=coverage.txt
-    - go get github.com/boumenot/gocover-cobertura
     - go run github.com/boumenot/gocover-cobertura < coverage.txt > coverage.xml
-    - go install gotest.tools/gotestsum@latest
     - gotestsum --junitfile junit.xml --format testname
   coverage: "/\\(statements\\)\\s+\\d+.?\\d+%/"
   artifacts:
