@@ -1,8 +1,16 @@
 # Changelog
 
+## v1.0.12
+
+- Upgrade dependencies, Gitlab CI also has junit report now
+
+Thanks to all contributors.
+
 ## v1.0.11
 
 - Upgrade dependencies, in particular golang.org/x/crypto to fix GO-2023-2402
+
+Thanks to all contributors.
 
 ## v1.0.10
 
