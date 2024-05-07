@@ -1,6 +1,8 @@
 ginraymond
 ==========
 
+[![Go Report Card](https://goreportcard.com/badge/gitlab.com/go-box/ginraymond)](https://goreportcard.com/report/gitlab.com/go-box/ginraymond)
+
 Package ginraymond is a custom template renderer that can be used with
 the Gin web framework: https://github.com/gin-gonic/gin, it adds support
 for Handlebars style templates to your Gin application. It uses the Raymond
