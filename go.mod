@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/aymerick/raymond v2.0.2+incompatible
-	github.com/gin-gonic/gin v1.9.1
+	github.com/gin-gonic/gin v1.10.0
 )
 
 require (
