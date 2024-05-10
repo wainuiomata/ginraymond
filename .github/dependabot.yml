@@ -1,0 +1,9 @@
+# Official repository is at gitlab.com/go-box/ginraymond
+# The GitHub mirror is only used for dependabot.
+
+version: 2
+updates:
+  - package-ecosystem: "gomod"
+    directory: "/"
+    schedule:
+      interval: "weekly"
