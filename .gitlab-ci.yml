@@ -1,4 +1,4 @@
-image: golang:1.20-alpine
+image: golang:1.22-alpine
 
 include:
   - template: Security/SAST.gitlab-ci.yml
@@ -11,7 +11,7 @@ stages:
 golangci-lint:
   stage: lint
   needs: []
-  image: golangci/golangci-lint:v1.53.3
+  image: golangci/golangci-lint:v1.62.2
   script:
     - golangci-lint run -v
 
