@@ -2,7 +2,7 @@
 
 ## v1.0.14
 
-- Fix go report card links were broken in README
+- Update dependencies to fix CWE-285 and CWE-770
 
 Thanks to all contributors.
 
