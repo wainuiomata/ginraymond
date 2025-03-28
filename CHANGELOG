@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.0.15
+
+- Update dependencies to fix GO-2025-3503 and GO-2025-3487
+- Upgrade to Go 1.24
+- Upgrade to golangci-lint v2.0.2
+
+Thanks to all contributors.
+
 ## v1.0.14
 
 - Update dependencies to fix CWE-285 and CWE-770
