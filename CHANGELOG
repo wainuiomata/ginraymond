@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.1.0
+
+- Update dependencies, updating to Gin 1.12.0 and Go 1.26
+- Remove goreportcard badge from README as that has been sunset
+
+Thanks to all contributors.
+
 ## v1.0.18
 
 - Update quic-go to fix header expansion DoS issue
